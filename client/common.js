@@ -9,3 +9,9 @@ Meteor.startup(function () {
     	passwordSignupFields: 'USERNAME_AND_EMAIL'
     });
   });
+
+
+Template.registerHelper('getProfileImg', function(userId){
+	var imgUrl = UserImages.findOne({userId: userId}).image;
+	return imgUrl;
+});
